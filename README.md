@@ -16,3 +16,8 @@ docker compose logs display-node # see logged pings
 chmod +x health-check.sh         # give execution rights to health-check-sh
 ./health-check.sh                # check health of services and log sensor-node IP-address to log.txt
 ```
+
+
+## Improvements to existing code
+- make pings expect a response and log if something goes wrong
+- use env-variables for service names and ports instead of hard coding values
