@@ -1,0 +1,22 @@
+services:
+  display-node:
+    build:
+      context: ./display-node
+      dockerfile: Dockerfile
+    depends_on:
+      - sensor-node
+    networks:
+      - sensor-network
+
+  sensor-node:
+    build:
+      context: ./sensor-node
+      dockerfile: Dockerfile
+    ports:
+      - "15000:15000"
+    networks:
+      - sensor-network
+
+networks:
+  sensor-network:
+    driver: bridge
